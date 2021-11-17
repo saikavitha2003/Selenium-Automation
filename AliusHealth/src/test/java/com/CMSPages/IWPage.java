@@ -46,13 +46,19 @@ public class IWPage {
 	
 	By FirstName= By.xpath("//span/input[@name='firstName']");
 	By LastName= By.xpath("//span/input[@name='lastName']");
+	By ClientName=By.xpath("//div/div/ul/li[contains(text(),'CCMSI - OneSource')]");
+	By ClientNameTextField=By.xpath("//div[1]/div/div/ul/li/div/input");
+	
     By Address1= By.xpath("//span/input[@name='location.address1']");
     By City= By.xpath("//span/input[@name='location.city']");
-    By State= By.xpath("//div[text()='State']");
+    By statedropDownArrow=By.xpath("//div[3]/div[1]/div/div/div[1]/div/span");
+    By stateDropdown= By.xpath("//div/ul/li[contains(text(),'Hawaii')]");
     By Zipcode= By.xpath("//span/input[@name='location.zip']");
     By SSN= By.xpath("//span/input[@name='socialSecurityNumber']");
+    By PrimaryPhoneDropdown= By.xpath("//div[text()='Primary Phone']");
     By Phone= By.xpath("//span/input[@name='phone']");
-    By DateofBirth = By.xpath("//span/input[@name='phone']");
+    
+    By DateofBirth = By.xpath("//div[1]/div/div/div[1]/div[1]/div/input");
     
 	public void navigateIWpage() throws InterruptedException {
 		commonUtilities.waitfortheElement(driver, IWpage);	
@@ -251,6 +257,9 @@ public void enterLastName(String lastName) throws InterruptedException {
 	commonUtilities.enterTextboxinputdata(driver, LastName, lastName);	
 
 }
+
+
+
 public void enterAddress1(String address1) throws InterruptedException {
 	commonUtilities.waitfortheElement(driver,Address1);
 	commonUtilities.enterTextboxinputdata(driver, Address1, address1);	
@@ -262,10 +271,7 @@ public void enterCity(String city) throws InterruptedException {
 	commonUtilities.enterTextboxinputdata(driver, City, city);	
 }
 
-public void enterState(String state) throws InterruptedException {
-	commonUtilities.waitfortheElement(driver,State);
-	commonUtilities.enterTextboxinputdata(driver, State,state);	
-}
+
 public void enterZipcode(String zipcode) throws InterruptedException {
 	commonUtilities.waitfortheElement(driver,Zipcode);
 	commonUtilities.enterTextboxinputdata(driver, Zipcode,zipcode);	
@@ -281,5 +287,23 @@ public void enterPhone(String phone) throws InterruptedException {
 public void enterDateofBirth(String dateofbirth) throws InterruptedException {
 	commonUtilities.waitfortheElement(driver,DateofBirth);
 	commonUtilities.enterTextboxinputdata(driver, DateofBirth,dateofbirth);		
+}
+public void selecteStateDropdown(String dropdownValue) throws InterruptedException {
+	commonUtilities.waitfortheElement(driver,stateDropdown);
+	commonUtilities.javaScriptclickonRadiobutton(driver, statedropDownArrow);
+	commonUtilities.selectDropdownValue(driver, statedropDownArrow,dropdownValue);		
+}
+public void clickGenderRadioButton(String genderValue) throws InterruptedException {
+	By GenderRadiobutton= By.xpath("//span[text()='"+genderValue+"']");
+	commonUtilities.waitfortheElement(driver,GenderRadiobutton);
+	commonUtilities.javaScriptclickonRadiobutton(driver, GenderRadiobutton);		
+}
+
+public void selectClientName(String clientName) throws InterruptedException {
+	commonUtilities.enterTextboxinputdata(driver, ClientNameTextField, clientName);	
+	commonUtilities.waitfortheElement(driver, ClientName);
+
+	driver.findElement(ClientName).click();
+
 }
 }

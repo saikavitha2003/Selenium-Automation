@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class commonUtilities {
@@ -46,10 +47,27 @@ executor.executeScript("arguments[0].click();", element);
 
 	}
 	
+public static void javaScriptclickonRadiobutton(WebDriver driver, By locator) throws InterruptedException {
+		
+		
+		WebElement element = driver.findElement(locator);
+		
+
+JavascriptExecutor executor = (JavascriptExecutor)driver;
+executor.executeScript("arguments[0].click();", element);
+
+
+	}
+	
 	public static void enterTextboxinputdata(WebDriver driver, By locator,String textdata) {
-		driver.findElement(locator).clear();
+		//driver.findElement(locator).clear();
 		driver.findElement(locator).sendKeys(textdata);
 		driver.findElement(locator).sendKeys(Keys.ENTER);
+	}
+	public static void selectDropdownValue(WebDriver driver, By locator,String dropdownValue) {
+		//driver.findElement(locator).clear();
+		Select dropdownSelect = new Select(driver.findElement(locator));
+		dropdownSelect.selectByVisibleText(dropdownValue);
 	}
 	
 }

@@ -1,81 +1,81 @@
 package com.common;
 
 public class DataHook {
-	String FirstName;
-	String LastName;
-	String ClientName;
-	String Address1;
-	String City;
-	String State;
-	String ZipCode;
-	String SSN;
-	String Phone;
-	String HomePhone;
-	String DOB;
-	public String getFirstName() {
+	static String FirstName;
+	static String LastName;
+	static String ClientName;
+	static String Address1;
+	static String City;
+	static String State;
+	static String ZipCode;
+	static String SSN;
+	static String Phone;
+	static String HomePhone;
+	static String DOB;
+	public static String getFirstName() {
 		return FirstName;
 	}
-	public void setFirstName(String firstName) {
+	public static void setFirstName(String firstName) {
 		FirstName = firstName;
 	}
-	public String getLastName() {
+	public static String getLastName() {
 		return LastName;
 	}
-	public void setLastName(String lastName) {
+	public static void setLastName(String lastName) {
 		LastName = lastName;
 	}
-	public String getClientName() {
+	public static String getClientName() {
 		return ClientName;
 	}
-	public void setClientName(String clientName) {
+	public static void setClientName(String clientName) {
 		ClientName = clientName;
 	}
-	public String getAddress1() {
+	public static String getAddress1() {
 		return Address1;
 	}
-	public void setAddress1(String address1) {
+	public static void setAddress1(String address1) {
 		Address1 = address1;
 	}
-	public String getCity() {
+	public static String getCity() {
 		return City;
 	}
-	public void setCity(String city) {
+	public static void setCity(String city) {
 		City = city;
 	}
-	public String getState() {
+	public static String getState() {
 		return State;
 	}
-	public void setState(String state) {
+	public static void setState(String state) {
 		State = state;
 	}
-	public String getZipCode() {
+	public static String getZipCode() {
 		return ZipCode;
 	}
-	public void setZipCode(String zipCode) {
+	public static void setZipCode(String zipCode) {
 		ZipCode = zipCode;
 	}
-	public String getSSN() {
+	public static String getSSN() {
 		return SSN;
 	}
-	public void setSSN(String sSN) {
+	public static void setSSN(String sSN) {
 		SSN = sSN;
 	}
-	public String getPhone() {
+	public static String getPhone() {
 		return Phone;
 	}
-	public void setPhone(String phone) {
+	public static void setPhone(String phone) {
 		Phone = phone;
 	}
-	public String getHomePhone() {
+	public static String getHomePhone() {
 		return HomePhone;
 	}
-	public void setHomePhone(String homePhone) {
+	public static void setHomePhone(String homePhone) {
 		HomePhone = homePhone;
 	}
-	public String getDOB() {
+	public static String getDOB() {
 		return DOB;
 	}
-	public void setDOB(String dOB) {
+	public static void setDOB(String dOB) {
 		DOB = dOB;
 	}
 

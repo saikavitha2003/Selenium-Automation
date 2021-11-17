@@ -6,7 +6,7 @@ Feature: Regression Testing Scenarios
   And verified Dashboard page is displayed
   Then Navigate to IW Screen and verified that IW Screen is displayed
    And Search the IW by "All"
-  And Create Claim for IW "<testCase>" with "<Data>"
+  #And Create Claim for IW "<testCase>" with "<Data>"
     And Click on Claimant Name and verified that IWDemographics Screen is displayed
     And Click on Transaction History and verified that IWTransaction History Screen is displayed
     And Click on claims and verified that IWClaims Screen is displayed

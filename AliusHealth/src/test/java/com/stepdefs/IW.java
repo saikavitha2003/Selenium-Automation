@@ -1,6 +1,8 @@
 package com.stepdefs;
 
 import java.io.FileNotFoundException;
+import java.util.Locale;
+import java.util.Random;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -20,12 +22,18 @@ import io.cucumber.java.en.Then;
 public class IW extends DriverManager {
 	WebDriver driver=DriverManager.driverselection();
 	IWPage iwscreen=new IWPage(driver);
-	Faker fakedata=new Faker();
-	DataHook datahook=new DataHook();
+	Faker fakedata=new Faker(new Locale("en-US","us"),new Random());
+	//DataHook datahook=new DataHook();
 	public IW() {
-		datahook.setFirstName(fakedata.name().firstName());
-		datahook.setLastName(fakedata.name().lastName());
-		datahook.setAddress1(fakedata.address().streetAddress());
+		DataHook.setFirstName(fakedata.name().firstName());
+		DataHook.setLastName(fakedata.name().lastName());
+		DataHook.setAddress1(fakedata.address().streetAddress());
+		DataHook.setCity(fakedata.address().city());
+		DataHook.setState(fakedata.address().state());
+		DataHook.setZipCode(fakedata.address().zipCode());
+		DataHook.setSSN(fakedata.idNumber().ssnValid());
+		DataHook.setPhone(fakedata.phoneNumber().subscriberNumber(2));
+		DataHook.setDOB("01-17-1977");
 	}
 	@Then("Navigate to IW Screen and verified that IW Screen is displayed")
 	public void navigatetoIWscreen() {
@@ -224,15 +232,18 @@ public class IW extends DriverManager {
 			//Thread.sleep(30000);
 
 			iwscreen.createIWprofileClick();
-			iwscreen.enterFirstName(datahook.getFirstName());
-			iwscreen.enterLastName(datahook.getLastName());
-			iwscreen.enterAddress1(datahook.getAddress1());
-			iwscreen.enterCity(datahook.getCity());
-			iwscreen.enterState(datahook.getState());
-			iwscreen.enterZipcode(datahook.getZipCode());
-			iwscreen.enterSsn(datahook.getSSN());
-			iwscreen.enterPhone(datahook.getPhone());
-			iwscreen.enterDateofBirth(datahook.getDOB());
+			iwscreen.enterFirstName(DataHook.getFirstName());
+			iwscreen.enterLastName(DataHook.getLastName());
+			iwscreen.selectClientName("OneSource");
+			iwscreen.enterAddress1(DataHook.getAddress1());
+			iwscreen.enterCity(DataHook.getCity());
+			System.out.println(DataHook.getState());
+			iwscreen.selecteStateDropdown(DataHook.getState());
+			iwscreen.enterZipcode(DataHook.getZipCode());
+			iwscreen.enterSsn(DataHook.getSSN());
+			iwscreen.enterPhone(DataHook.getPhone());
+			iwscreen.clickGenderRadioButton("M");
+			iwscreen.enterDateofBirth(DataHook.getDOB());
 			
 			
 			
