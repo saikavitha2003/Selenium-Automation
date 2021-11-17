@@ -1,0 +1,26 @@
+package com.common;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
+import com.AliusHealth.DriverManager;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
+
+public class commonUtilities {
+	WebDriver driver;
+	public commonUtilities(WebDriver driver) {
+	this.driver=driver;	
+	}
+	
+	
+	
+	
+
+	
+}
+
+
+

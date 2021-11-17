@@ -1,0 +1,34 @@
+package com.CMSPages;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class AdminPage {
+	WebDriver driver;
+	public AdminPage(WebDriver driver) {
+	this.driver=driver;	
+	}
+	
+	By Adminpage= By.xpath("//span[text()='Admin']");
+	By ClientWebPortal=By.xpath("//div[text()='Client Web Portal']");
+	By PriorAuthorizationpageverification=By.xpath("//h2[text()='Unresolved Rejected Transactions :']");
+	
+	public void navigateAdminpage() throws InterruptedException {
+			
+		driver.findElement(Adminpage).click();
+	}
+	
+	
+	public void navigateclientWebPortal() throws InterruptedException {
+		
+		driver.findElement(ClientWebPortal).click();
+	
+	}
+	
+public void adminclientwebportalpageverification() throws InterruptedException {
+		
+		Assert.assertEquals(true, driver.findElement(PriorAuthorizationpageverification).isDisplayed());
+}
+		
+}

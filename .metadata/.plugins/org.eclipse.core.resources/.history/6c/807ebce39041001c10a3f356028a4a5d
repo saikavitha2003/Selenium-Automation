@@ -1,0 +1,99 @@
+package com.CMSPages;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.common.commonUtilities;
+
+public class IWPage {
+	WebDriver driver;
+	public IWPage(WebDriver driver) {
+	this.driver=driver;	
+	}
+	By IWpage= By.xpath("//li/div[text()='IW']");
+	By IWpageverification= By.xpath("//button/span[contains(text(),'Claim')]");
+	By IWSearchDropDown=By.xpath("//span/div[1]/div/span");
+	By IWSearchTextBox=By.xpath("//input[@name='iwSearch']");
+	By IWSearchValueSelection=By.xpath("//li[1]/ul/li[1]");
+	By IWSearchDataTableVerification=By.xpath("//tbody/tr[3]/td[1]/a");
+	//By IWDemographicspageverification=By.xpath("//h2[contains(text(),'Create Injured Worker')]");
+	By IWClaimantName=By.xpath("//table/tbody/tr[1]//a");
+	By IWDemographicspageverification=By.xpath("//h2[contains(text(),'Create Injured Worker')]");
+	By IWTransactionHistory=By.xpath("//a[contains(text(),'Transaction History')]");
+	By IWTransactionHistorypageverification=By.xpath("//span[contains(text(),'Transaction Type')]");
+	By IWClaims=By.xpath("//a[contains(text(),'Claims')]");
+	By IWClaimspageverification=By.xpath("//h2[contains(text(),'Claims')]");
+	
+	
+	public void navigateIWpage() throws InterruptedException {
+		commonUtilities.waitfortheElement(driver, IWpage);	
+		driver.findElement(IWpage).click();
+	}
+	
+public void verifiedIWpage() throws InterruptedException {
+	commonUtilities.waitfortheElement(driver, IWpageverification);	
+	Assert.assertEquals(true, driver.findElement(IWpageverification).isDisplayed());
+}
+	
+public void IWSearch(String dropDownValue) throws InterruptedException {
+	
+	By IWSearchDropDownValue=By.xpath("//li[text()='"+dropDownValue+"']");
+	commonUtilities.waitfortheElement(driver, IWSearchDropDown);
+	
+	driver.findElement(IWSearchDropDown).click();
+	commonUtilities.waitfortheElement(driver, IWSearchDropDownValue);
+	driver.findElement(IWSearchDropDownValue).click();
+	commonUtilities.waitfortheElement(driver, IWSearchTextBox);
+	driver.findElement(IWSearchTextBox).sendKeys("David");
+	commonUtilities.waitfortheElement(driver, IWSearchValueSelection);
+	driver.findElement(IWSearchValueSelection).click();
+	commonUtilities.waitfortheElement(driver, IWSearchDataTableVerification);
+	
+	Assert.assertEquals(true,driver.findElement(IWSearchDataTableVerification).getText().toString().toLowerCase().contains("david"));
+
+	
+}	
+		
+public void IWdemograpicPage() throws InterruptedException {
+	commonUtilities.waitfortheElement(driver, IWDemographicspageverification);
+		Assert.assertEquals(true, driver.findElement(IWDemographicspageverification).isDisplayed());
+}
+public void IWclaimantName() throws InterruptedException {
+	commonUtilities.waitfortheElement(driver,IWClaimantName);
+		Assert.assertEquals(true, driver.findElement(IWClaimantName).isDisplayed());
+
+}
+
+public void IWclaimantNameclick() throws InterruptedException {
+	commonUtilities.waitfortheElement(driver,IWClaimantName);
+		 driver.findElement(IWClaimantName).click();
+
+}
+
+public void verifiedIWdemograpicsPage() throws InterruptedException {
+	commonUtilities.waitfortheElement(driver, IWDemographicspageverification);
+		Assert.assertEquals(true, driver.findElement(IWDemographicspageverification).isDisplayed());
+}
+
+public void IWTransactionHistoryclick() throws InterruptedException {
+	commonUtilities.waitfortheElement(driver,IWTransactionHistory);
+		 driver.findElement(IWTransactionHistory).click();
+
+}
+
+public void verifiedIWtransactionHistoryPage() throws InterruptedException {
+	commonUtilities.waitfortheElement(driver, IWTransactionHistorypageverification);
+		Assert.assertEquals(true, driver.findElement(IWTransactionHistorypageverification).isDisplayed());
+}
+
+public void IWClaimsclick() throws InterruptedException {
+	commonUtilities.waitfortheElement(driver,IWClaims);
+		 driver.findElement(IWClaims).click();
+
+}
+public void verifiedIWclaimsPage() throws InterruptedException {
+	commonUtilities.waitfortheElement(driver, IWClaimspageverification);
+		Assert.assertEquals(true, driver.findElement(IWClaimspageverification).isDisplayed());
+}
+}

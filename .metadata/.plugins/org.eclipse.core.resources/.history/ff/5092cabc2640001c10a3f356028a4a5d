@@ -1,0 +1,111 @@
+package com.stepdefs;
+
+import org.openqa.selenium.WebDriver;
+
+import com.AliusHealth.DriverManager;
+import com.CMSPages.ClientPage;
+
+import io.cucumber.java.en.Then;
+
+public class Client extends DriverManager{
+	WebDriver driver=DriverManager.driverselection();
+	ClientPage clientScreen=new ClientPage(driver);
+	@Then("Navigate to Client Screen and verified that Client Screen is displayed")
+	public void navigateClientpage() throws InterruptedException {
+		try {
+			 Thread.sleep(5000);
+
+			clientScreen.navigateClientpage();
+			Thread.sleep(20000);
+			clientScreen.verifiedClientpage();
+		} catch(Exception e) {e.printStackTrace();}
+		
+	}
+	@Then("verified that Client Screen is displayed")
+	public void verifyClientpage() throws InterruptedException {
+		try {
+			 Thread.sleep(20000);
+
+			
+			
+		} catch(Exception e) {e.printStackTrace();}
+		
+	}
+	@Then("Click on Client Name and verified that ClientDemographics Screen is displayed")
+	public void clickonClientname() throws InterruptedException {
+		try {
+			 Thread.sleep(5000);
+
+			clientScreen.clickonclientname();
+			Thread.sleep(20000);
+			clientScreen.verifiedClientdemographicspage();
+		} catch(Exception e) {e.printStackTrace();}
+		
+	}
+	
+	@Then("Click on Client Hierarchy and verified that ClientHierarchy Screen is displayed")
+	public void clickonClienthierarchy() throws InterruptedException {
+		try {
+			 Thread.sleep(5000);
+
+			clientScreen.clickonclienthierarchy();
+			Thread.sleep(20000);
+			clientScreen.verifiedClienthierarchypage();
+		} catch(Exception e) {e.printStackTrace();}	
+		
+}
+	@Then("Click on Client BusinessAssociates and verified that Client BusinessAssociates Screen is displayed")
+	public void clickonClientbusinessassociates() throws InterruptedException {
+		try {
+			 Thread.sleep(5000);
+
+			clientScreen.clickonclientbusinessassociates();
+			Thread.sleep(20000);
+			clientScreen.verifiedClientbusinessassociatepage();
+		} catch(Exception e) {e.printStackTrace();}	
+	
+	
+	}	
+	
+	@Then("Click on Client Options and verified that Client Options Screen is displayed")
+	public void clickonClientOptions() throws InterruptedException {
+		try {
+			 Thread.sleep(5000);
+
+			clientScreen.clickonclientoptions();
+			Thread.sleep(20000);
+			clientScreen.verifiedClientoptionsgeneralpage();
+		} catch(Exception e) {e.printStackTrace();}	
+	
+}
+	@Then("Click on Monthly Fee & Pricing Options and verified that Monthly Fee & Pricing Options Screen is displayed")
+	public void clickonClientOptionsmonthlyfeepricingoptionspageverification() throws InterruptedException {
+		try {
+			 Thread.sleep(5000);
+
+			clientScreen.clickonmonthlyfeepricingoptions();
+			Thread.sleep(20000);
+		} catch(Exception e) {e.printStackTrace();}	
+}
+	@Then("Click on Organization Options and verified that Organization Options Screen is displayed")
+	public void clickonClientOptionsorganizationoptionspageverification() throws InterruptedException {
+		try {
+			 Thread.sleep(5000);
+
+			clientScreen.clickonorganizationoptions();
+			Thread.sleep(20000);
+
+		} catch(Exception e) {e.printStackTrace();}	
+}
+	
+	@Then("Click on Notes and Attachements and verified that Notes and Attachements Screen is displayed")
+	public void clickonClientNotesandAttachments() throws InterruptedException {
+		try {
+			 Thread.sleep(5000);
+
+			clientScreen.clickonnotesandattachments();
+			Thread.sleep(20000);
+			clientScreen.verifiedNotesandattachmentspage();
+		} catch(Exception e) {e.printStackTrace();}	
+	
+}

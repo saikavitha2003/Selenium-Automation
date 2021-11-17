@@ -1,0 +1,19 @@
+package com.CMSPages;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class ReportingPage {
+	WebDriver driver;
+	public ReportingPage(WebDriver driver) {
+	this.driver=driver;	
+	}
+	By Reportingpage= By.xpath("//li/div[text()='Reporting']");
+		public void navigateReportingpage() throws InterruptedException {
+			
+		driver.findElement(Reportingpage).click();
+	}
+	
+
+}

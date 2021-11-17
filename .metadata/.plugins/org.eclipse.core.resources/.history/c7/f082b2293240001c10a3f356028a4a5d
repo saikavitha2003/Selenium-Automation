@@ -1,0 +1,6 @@
+OS=Windows
+Browser=Chrome
+Environment=UAT
+url=https://alius-ui-uat.services.aliuscloud.net/login
+adminuser=kdhanyasi@aliushealth.com
+adminpassword=Sairam@17

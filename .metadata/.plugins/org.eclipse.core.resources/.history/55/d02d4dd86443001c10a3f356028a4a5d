@@ -1,0 +1,114 @@
+package com.stepdefs;
+
+import org.openqa.selenium.WebDriver;
+
+import com.AliusHealth.DriverManager;
+import com.CMSPages.IWPage;
+import com.CMSPages.TransactionPage;
+import com.common.commonUtilities;
+
+import io.cucumber.java.en.Then;
+
+public class Transaction extends DriverManager {
+	WebDriver driver=DriverManager.driverselection();
+	TransactionPage transactionscreen=new TransactionPage(driver);
+	@Then("Navigate to Transaction Screen and verified that Transaction Screen is displayed")
+	public void navigateTransactionage() throws InterruptedException {
+		try {
+			 //Thread.sleep(5000);
+
+			transactionscreen.navigateTransactionpage();
+			//Thread.sleep(20000);
+			transactionscreen.verifiedTransactionpage();
+		} catch(Exception e) {e.printStackTrace();}
+		
+	}
+	@Then("verified that Transaction Screen is displayed")
+	public void verifyTransactionpage() throws InterruptedException {
+		try {
+			 //Thread.sleep(20000);
+
+			
+			
+		} catch(Exception e) {e.printStackTrace();}
+		
+	#}
+	@Then("Click on TransactionClaimnumber and verified that TransactionClaim Details Screen is displayed")
+	public void clickonTransactionClaimnumber() throws InterruptedException {
+		try {
+			
+			Thread.sleep(20000);
+			transactionscreen.clickonTransactionclaimnumber();
+			
+			transactionscreen.verifiedTransactionClaimDetailspage();
+			commonUtilities.waitForPageLoad(driver);
+		} catch(Exception e) {e.printStackTrace();}	
+}
+	
+	@Then("Click on IWclaimTransaction History and verified that IWclaimTransaction History Screen is displayed")
+	public void clickonIWClaimTransactionHistory() throws InterruptedException {
+		try {
+			
+
+			iwscreen.IWClaimTransactionHistory();
+			commonUtilities.waitForPageLoad(driver);
+			iwscreen.verifiedIWtransactionHistoryPage();
+		} catch(Exception e) {e.printStackTrace();}
+		
+	}
+	
+	@Then("Click on IWclaimInvoices and verified that IWclaimInvoices Screen is displayed")
+	public void clickonIWClaimInvoices() throws InterruptedException {
+		try {
+			
+
+			iwscreen.IWClaimInvoices();
+			commonUtilities.waitForPageLoad(driver);
+			iwscreen.verifiedIWClaimInvoicesPage();
+		} catch(Exception e) {e.printStackTrace();}
+		
+	}
+	@Then("Click on IWclaimTasks and verified that IWclaimTasks Screen is displayed")
+	public void clickonIWClaimTasks() throws InterruptedException {
+		try {
+			
+
+			iwscreen.IWClaimTasks();
+			commonUtilities.waitForPageLoad(driver);
+			iwscreen.verifiedIWClaimTasksPage();
+		} catch(Exception e) {e.printStackTrace();}
+}
+	
+	@Then("Click on IWclaimPrior Authorization and verified that IWclaimPrior Authorization Screen is displayed")
+	public void clickonIWPriorAuthorization() throws InterruptedException {
+		try {
+			
+
+			iwscreen.IWClaimPriorAuthorization();
+			commonUtilities.waitForPageLoad(driver);
+			iwscreen.verifiedIWClaimPriorAuthorizationPage();
+		} catch(Exception e) {e.printStackTrace();}
+}
+
+	@Then("Click on IWclaimNotes and Attachements and verified that IWclaimNotes and Attachements Screen is displayed")
+	public void clickonIWclaimNotesandAttachements() throws InterruptedException {
+		try {
+			
+
+			iwscreen.IWClaimNotesandAttachments();
+			commonUtilities.waitForPageLoad(driver);
+			iwscreen.IWClaimNotesandAttachments();
+		} catch(Exception e) {e.printStackTrace();}
+}
+	@Then("Click on IWclaimActivity Log and verified that Notes and IWclaimActivity Log Screen is displayed")
+	public void clickonIWClaimActivityLog () throws InterruptedException {
+		try {
+			Thread.sleep(30000);
+
+			iwscreen.IWClaimActivityLog();
+			commonUtilities.waitForPageLoad(driver);
+			iwscreen.verifiedIWClaimActivityLogPage();
+		} catch(Exception e) {e.printStackTrace();}
+		
+	}
+}

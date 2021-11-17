@@ -1,0 +1,22 @@
+1635820228578	Rename resource 'Drivers'
+1635820736408	Rename resource 'RegressionTest'
+1635821030968	Delete element
+1635821439164	Delete element
+1635824684745	Rename package 'stepdefs'
+1635824835936	Rename type 'LoginPage'
+1635899958930	Delete element
+1635904276815	Rename package 'com.Pages'
+1635904326557	Move compilation unit
+1635904338044	Move compilation unit
+1635904344252	Move compilation unit
+1635904353319	Move compilation unit
+1635904363866	Move compilation unit
+1635904370096	Move compilation unit
+1635910954752	Delete element
+1635984755809	Rename type 'PricingTool'
+1636219000703	Rename resource 'testData.json'
+1636219073214	Rename resource 'IWtestData.json'
+1636225426155	Copy file
+1636225466555	Rename resource 'CreateIWProfile.json'
+1636226326129	Copy file
+1636227699291	Rename compilation unit 'ReportingRXHistoryPage.java'

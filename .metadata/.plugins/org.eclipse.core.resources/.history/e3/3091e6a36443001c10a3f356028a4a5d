@@ -1,0 +1,35 @@
+package com.stepdefs;
+
+import org.openqa.selenium.WebDriver;
+
+import com.AliusHealth.DriverManager;
+import com.CMSPages.IWPage;
+import com.CMSPages.TransactionPage;
+
+import io.cucumber.java.en.Then;
+
+public class Transaction extends DriverManager {
+	WebDriver driver=DriverManager.driverselection();
+	TransactionPage transactionscreen=new TransactionPage(driver);
+	@Then("Navigate to Transaction Screen and verified that Transaction Screen is displayed")
+	public void navigateTransactionage() throws InterruptedException {
+		try {
+			 //Thread.sleep(5000);
+
+			transactionscreen.navigateTransactionpage();
+			//Thread.sleep(20000);
+			transactionscreen.verifiedTransactionpage();
+		} catch(Exception e) {e.printStackTrace();}
+		
+	}
+	@Then("verified that Transaction Screen is displayed")
+	public void verifyTransactionpage() throws InterruptedException {
+		try {
+			 //Thread.sleep(20000);
+
+			
+			
+		} catch(Exception e) {e.printStackTrace();}
+		
+	}
+}

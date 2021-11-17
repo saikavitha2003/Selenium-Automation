@@ -1,0 +1,26 @@
+package com.CMSPages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class LoginHomePage {
+	WebDriver driver;
+	public LoginHomePage(WebDriver driver) {
+	this.driver=driver;	
+	}
+	
+	By Username =By.xpath("//input[@name='username']");
+	By Password =By.xpath("//input[@name='password']");		
+	By Loginbutton =By.xpath("//button[@type='submit']");	
+	
+	
+	public void login(String url,String userName, String passWord) throws InterruptedException {
+		driver.get(url);
+		driver.findElement(Username).sendKeys(userName);
+		driver.findElement(Password).sendKeys(passWord);
+		//Thread.sleep(10000);
+		driver.findElement(Loginbutton).click();
+		//Thread.sleep(1000);
+	}
+}
+

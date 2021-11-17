@@ -1,0 +1,17 @@
+package com.common;
+
+public class DataHook {
+	String FirstName;
+	String LastName;
+	String ClientName;
+	String Address1;
+	String City;
+	String State;
+	String ZipCode;
+	String SSN;
+	String Phone;
+	String HomePhone;
+	String DOB;
+	
+
+}

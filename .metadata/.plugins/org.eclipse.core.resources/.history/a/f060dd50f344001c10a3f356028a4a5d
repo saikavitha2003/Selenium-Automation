@@ -1,0 +1,14 @@
+Feature: Regression Testing Scenarios
+
+  @iuunittest
+  Scenario Outline: Verify that a user is able to login to alius health.
+  Given user is able to log in to the application
+  And verified Dashboard page is displayed
+  Then Navigate to IW Screen and verified that IW Screen is displayed
+   And Navigate to Prior Authorization Screen and verified that Prior Authorization Screen is displayed
+      And Navigate to Report Screen and verified that Report Screen is displayed
+  
+  Examples:
+  | testCase|Data |Role|
+ |CREATECLAIM|CreateClaimtestData|Admin
+ |REGRESSION|RegressionScenariosData|Admin|

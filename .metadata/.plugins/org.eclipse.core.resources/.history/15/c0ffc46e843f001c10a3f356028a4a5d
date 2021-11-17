@@ -1,0 +1,28 @@
+package com.stepdefs;
+
+import org.openqa.selenium.WebDriver;
+
+import com.AliusHealth.DriverManager;
+import com.CWPPages.AlertsPage;
+import com.CWPPages.Reportpage;
+
+import io.cucumber.java.en.Then;
+
+public class Report extends DriverManager{
+
+	WebDriver driver=DriverManager.driverselection();
+	Reportpage reportScreen=new Reportpage(driver);
+		@Then("Navigate to Alerts Screen and verified that Alerts Screen is displayed")
+		public void navigateAlertspage() throws InterruptedException {
+			try {
+				 Thread.sleep(5000);
+
+				 reportScreen.navigateReportpage();
+				Thread.sleep(20000);
+				
+			} catch(Exception e) {e.printStackTrace();}
+			
+		}	
+	
+	
+}

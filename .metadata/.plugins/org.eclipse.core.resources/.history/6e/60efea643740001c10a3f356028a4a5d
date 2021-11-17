@@ -1,0 +1,23 @@
+package com.CWPPages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class Reportpage {
+	WebDriver driver;
+	public Reportpage(WebDriver driver) {
+	this.driver=driver;	
+	}
+	
+	By Reportpage= By.xpath("//h6[contains(text(),'Report')]");
+	By Reportpageverification= By.xpath("//div[text()='Claims Report']");
+	
+	public void navigateReportpage() throws InterruptedException {
+			
+		driver.findElement(Reportpage).click();
+	}
+	
+	
+	
+	
+}

@@ -1,0 +1,42 @@
+package com.CMSPages;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class ClientPage {
+	WebDriver driver;
+	public ClientPage(WebDriver driver) {
+	this.driver=driver;	
+	}
+	
+	By Clientpage= By.xpath("//li/div[text()='Client']");
+	By Clientpageverification= By.xpath("//button/span[contains(text(),'Add Client')]");
+	By Clientname= By.xpath("//a[text() =' COUNTY CLAIMS OF OKLAHOMA']");
+	By Clientdemographicspageverification= By.xpath("//h2[contains(text(),'View Client Profile')]");
+	By ClientHierarchypageverification= By.xpath("//a[text()='Client Hierarchy']");
+	public void navigateClientpage() throws InterruptedException {
+			
+		driver.findElement(Clientpage).click();
+	}
+	
+	
+	public void verifiedClientpage() throws InterruptedException {
+		
+		Assert.assertEquals(true, driver.findElement(Clientpageverification).isDisplayed());
+	
+}
+	public void clickonclientname() throws InterruptedException {
+		
+		driver.findElement(Clientname).click();
+	}
+	
+
+	public void verifiedClientdemographicspage() throws InterruptedException {
+		
+		Assert.assertEquals(true, driver.findElement(Clientdemographicspageverification).isDisplayed());
+	
+}
+	
+	
+}

@@ -1,0 +1,24 @@
+package com.CWPPages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.common.commonUtilities;
+
+public class ClientWebPortalPage {
+	WebDriver driver;
+	public ClientWebPortalPage(WebDriver driver) {
+	this.driver=driver;	
+	}
+	
+	By ClientWebPortalpage= By.xpath("//li/div[text()='Client']");
+	public void navigateClientWebPortalpage() throws InterruptedException {
+		commonUtilities.waitfortheElement(driver, ClientWebPortalpage);	
+		driver.findElement(ClientWebPortalpage).click();
+	}
+	
+	
+	
+	
+	
+}

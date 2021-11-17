@@ -1,0 +1,29 @@
+package com.CMSPages;
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.common.commonUtilities;
+
+public class TransactionPage {
+	WebDriver driver;
+	public TransactionPage(WebDriver driver) {
+	this.driver=driver;	
+	}
+	By Transactionpage= By.xpath("//li/div[text()='Transaction']");
+	By Transactionpageverification= By.xpath("//button/span[contains(text(),'Create')]");
+	public void navigateTransactionpage() throws InterruptedException {
+			
+		driver.findElement(Transactionpage).click();
+	}
+	public void verifiedTransactionpage() throws InterruptedException {
+		commonUtilities.waitfortheElement(driver, Transactionpageverification);
+		
+		Assert.assertEquals(true, driver.findElement(Transactionpageverification).isDisplayed());
+	}
+	
+	
+}

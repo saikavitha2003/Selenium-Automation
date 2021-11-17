@@ -1,0 +1,43 @@
+{
+  "AddClient": {
+    "admin": {
+      "Name": "",
+      "ClientTypeDropdown": "TPA",
+      "ClientName": "CCMSI,CCMSI- Cleveland Clinic,BROADSPIRE",
+      "PhysicalAddress1": "",
+      "PhysicalStateDropdown": "",
+      "PhysicalCity": "",
+      "PhysicalZipCode": "",
+      "BillingAddress1": "",
+      "BillingStateDropdown": "",
+      "BillingCity": "",
+      "BillingZipCode": ""
+    },
+    "cfo": {
+      "Name": "",
+      "ClientTypeDropdown": "TPA",
+      "ClientName": "CCMSI,CCMSI- Cleveland Clinic,BROADSPIRE",
+      "PhysicalAddress1": "",
+      "PhysicalStateDropdown": "",
+      "PhysicalCity": "",
+      "PhysicalZipCode": "",
+      "BillingAddress1": "",
+      "BillingStateDropdown": "",
+      "BillingCity": "",
+      "BillingZipCode": ""
+    },
+    "executive": {
+      "Name": "",
+      "ClientTypeDropdown": "TPA",
+      "ClientName": "CCMSI,CCMSI- Cleveland Clinic,BROADSPIRE",
+      "PhysicalAddress1": "",
+      "PhysicalStateDropdown": "",
+      "PhysicalCity": "",
+      "PhysicalZipCode": "",
+      "BillingAddress1": "",
+      "BillingStateDropdown": "",
+      "BillingCity": "",
+      "BillingZipCode": ""
+    }
+  }
+}

@@ -1,0 +1,38 @@
+package com.stepdefs;
+
+import org.openqa.selenium.WebDriver;
+
+import com.AliusHealth.DriverManager;
+import com.CWPPages.ClientWebPortalPage;
+import com.CWPPages.PricingToolPage;
+
+import io.cucumber.java.en.Then;
+
+public class ClientWebPortal extends DriverManager {
+	WebDriver driver=DriverManager.driverselection();
+	ClientWebPortalPage  ClientWebPortalScreen=new  ClientWebPortalPage(driver);
+	@Then("Navigate on to Client Web Portal Screen and verified that Client Web Portal Screen is displayed")
+	public void navigateAlertspage() throws InterruptedException {
+		try {
+			 //Thread.sleep(5000);
+
+			 ClientWebPortalScreen.navigateClientWebPortalpage();
+			//Thread.sleep(20000);
+		
+		} catch(Exception e) {e.printStackTrace();}
+		
+	}
+	@Then("verified that Pricing Tool Screen is displayed")
+	public void verifyClientpage() throws InterruptedException {
+		try {
+			 //Thread.sleep(20000);
+
+			
+			
+		} catch(Exception e) {e.printStackTrace();}
+		
+	}
+}
+
+
+

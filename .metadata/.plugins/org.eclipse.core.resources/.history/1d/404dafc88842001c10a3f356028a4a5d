@@ -1,0 +1,28 @@
+package com.CMSPages;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.common.commonUtilities;
+
+public class TaskingPage {
+	WebDriver driver;
+	public TaskingPage(WebDriver driver) {
+	this.driver=driver;	
+	}
+	
+	By Taskingpage= By.xpath("//li/div[text()='Tasking']");
+	By Taskingpageverification= By.xpath("//button/span[contains(text(),'Create')]");
+	public void navigateTaskingpage() throws InterruptedException {
+		 	
+		driver.findElement(Taskingpage).click();
+	}
+	public void verifiedTaskingpage() throws InterruptedException {
+		commonUtilities.waitfortheElement(driver, Taskingpageverification);	
+		Assert.assertEquals(true, driver.findElement(Taskingpageverification).isDisplayed());
+	}
+	
+	
+	
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="AliusHealth" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.TestRunner.TestRunner" time="26.62">
+    <testsuite name="Regression Testing Scenarios #2" time="26.62">
+      <testcase name="Verify that a user is able to login to alius health." classname="Regression Testing Scenarios #2" time="26.62"/>
+    </testsuite>
+  </testsuite>
+</testrun>

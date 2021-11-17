@@ -1,0 +1,40 @@
+package com.stepdefs;
+
+import org.openqa.selenium.WebDriver;
+
+import com.AliusHealth.DriverManager;
+import com.CMSPages.ReportingPage;
+import com.CMSPages.TransactionPage;
+
+import io.cucumber.java.en.Then;
+
+public class Reporting extends DriverManager{
+	WebDriver driver=DriverManager.driverselection();
+	ReportingPage reportingscreen=new ReportingPage(driver);
+	@Then("Navigate to Reporting Screen and verified that Reporting Screen is displayed")
+	public void navigateReportingpage() throws InterruptedException {
+		try {
+			 Thread.sleep(5000);
+			 reportingscreen.navigateReportingpage();
+			Thread.sleep(20000);
+			//reportingscreen.verifiedReportingpage();
+		} catch(Exception e) {e.printStackTrace();}
+		
+	}
+	@Then("verified that Reporting Screen is displayed")
+	public void verifyReportingpage() throws InterruptedException {
+		try {
+			 Thread.sleep(20000);
+
+			
+			
+		} catch(Exception e) {e.printStackTrace();}
+		
+	}
+	
+	
+	
+	
+	
+	
+}

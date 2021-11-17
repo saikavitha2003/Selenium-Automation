@@ -1,0 +1,19 @@
+package com.common;
+
+import org.openqa.selenium.WebDriver;
+
+public class commonUtilities {
+	WebDriver driver;
+	public commonUtilities(WebDriver driver) {
+	this.driver=driver;	
+	}
+	
+	
+	
+	
+
+	
+}
+
+
+

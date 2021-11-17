@@ -1,0 +1,41 @@
+package com.common;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class commonUtilities {
+	WebDriver driver;
+	public commonUtilities(WebDriver driver) {
+	this.driver=driver;	
+	}
+	public static void waitfortheElement(WebDriver driver, By locator) {
+		WebDriverWait wait=new WebDriverWait(driver,40);
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		
+	}
+	
+	public void waitForPageLoad() {
+
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+
+	    wait.until(new ExpectedCondition<Boolean>() {
+	        public Boolean apply(WebDriver wdriver) {
+	            return ((JavascriptExecutor) driver).executeScript(
+	                "return document.readyState"
+	            ).equals("complete");
+	        }
+	    });
+	}
+	
+	
+	
+
+	
+}
+
+
+

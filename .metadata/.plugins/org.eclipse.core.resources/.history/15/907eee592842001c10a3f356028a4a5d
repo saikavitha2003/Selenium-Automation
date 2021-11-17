@@ -1,0 +1,45 @@
+package com.stepdefs;
+
+
+
+import org.openqa.selenium.WebDriver;
+
+import com.AliusHealth.DriverManager;
+import com.CMSPages.BillingPage;
+
+import io.cucumber.java.en.Then;
+
+public class Billing extends DriverManager {
+	WebDriver driver = DriverManager.driverselection();
+	BillingPage BillingScreen = new BillingPage(driver);
+	
+	@Then("Navigate to Billing Screen and verified that Billing Screen is displayed")
+	public void navigateTaskingPage() throws InterruptedException {
+
+		try {
+			//Thread.sleep(5000);
+			BillingScreen.navigateBillingpage();
+			//Thread.sleep(5000);
+			BillingScreen.verifiedBillingpage();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	@Then("verified that Billing Screen is displayed")
+	public void verifyBillingPage() throws InterruptedException {
+
+		try {
+			//Thread.sleep(5000);
+			
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static void navigateBillingpage() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

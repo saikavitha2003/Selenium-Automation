@@ -1,0 +1,61 @@
+package com.CMSPages;
+
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.common.commonUtilities;
+
+public class BillingPage {
+	WebDriver driver;
+	public BillingPage(WebDriver driver) {
+	this.driver=driver;	
+	}
+	
+	By Billingpage= By.xpath("//li/div[text()='Billing']");
+	By Billingpageverification= By.xpath("//button/span[contains(text(),'AUDIT TASKS')]");
+	By BillingpageSearchbutton=By.xpath("//button/span[contains(text(),'Search')]");
+	By BillingClaimantName=By.xpath("//table/tbody/tr[1]//a");
+	By BillingDemographicspageverification=By.xpath("//h2[contains(text(),'Create Injured Worker')]");
+	
+	public void navigateBillingpage() throws InterruptedException {
+		commonUtilities.waitfortheElement(driver, Billingpage);	
+		driver.findElement(Billingpage).click();
+	}
+	public void BillingpageSearchbuttonclick() throws InterruptedException {
+		commonUtilities.waitfortheElement(driver, BillingpageSearchbutton);
+			Assert.assertEquals(true, driver.findElement(BillingpageSearchbutton).isDisplayed());
+	
+	
+  }
+	public void verifiedBillingpage() throws InterruptedException {
+		commonUtilities.waitfortheElement(driver, Billingpageverification);	
+		Assert.assertEquals(true, driver.findElement(Billingpageverification).isDisplayed());
+	}
+	
+	
+	public void BillingclaimantName() throws InterruptedException {
+		commonUtilities.waitfortheElement(driver,BillingClaimantName);
+			Assert.assertEquals(true, driver.findElement(BillingClaimantName).isDisplayed());
+
+	}
+
+	public void BillingclaimantNameclick() throws InterruptedException {
+		commonUtilities.waitfortheElement(driver,BillingClaimantName);
+			 driver.findElement(BillingClaimantName).click();
+
+	}
+
+	public void verifiedBillingdemograpicsPage() throws InterruptedException {
+		commonUtilities.waitfortheElement(driver, BillingDemographicspageverification);
+			Assert.assertEquals(true, driver.findElement(BillingDemographicspageverification).isDisplayed());
+	}
+	
+	
+
+	
+}
+
+
+
+

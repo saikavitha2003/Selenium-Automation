@@ -1,0 +1,21 @@
+{
+  "CREATECLAIM": {
+    "AssociatedIW": "Robert,John,Rey,Den,Penny,Laura,Tim,James,Jason,Chris,Emily,Carl  ",
+    "DOIdate": "",
+    "EmployerName": "Commonwealth,VA,CCMS ",
+    "InjuryDescription": "Strain, Shoulder Fracture,Knee Injury",
+    "StateofJurisdictionDropdown": "Virginia",
+    "DateofReferraldate": "",
+    "TPAClaimNumber": "",
+    "StateClaimNumber": "",
+    "PolicyNumber": "",
+    "PolicyEffectiveDate": "",
+    "PolicyExpireDate": "",
+    "FormularyPlanNameDropdown": "AHStandard",
+    "EligibilityStartDate": "",
+    "EligibilityEndDate": "",
+    "MailOrderStatusDropdown": "Active",
+    "MailOrderVendorDropdown": "Prescription Mart",
+    "NotesText": "Automation Testing "
+  }
+}
