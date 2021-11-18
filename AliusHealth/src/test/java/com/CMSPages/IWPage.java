@@ -46,7 +46,7 @@ public class IWPage {
 	
 	By FirstName= By.xpath("//span/input[@name='firstName']");
 	By LastName= By.xpath("//span/input[@name='lastName']");
-	By ClientName=By.xpath("//div/div/ul/li[contains(text(),'CCMSI - OneSource')]");
+	By ClientName=By.xpath("//div/div/ul/li[text()='CCMSI ']");
 	By ClientNameTextField=By.xpath("//div[1]/div/div/ul/li/div/input");
 	
     By Address1= By.xpath("//span/input[@name='location.address1']");
@@ -55,8 +55,14 @@ public class IWPage {
     By stateDropdown= By.xpath("//div/ul/li[contains(text(),'Hawaii')]");
     By Zipcode= By.xpath("//span/input[@name='location.zip']");
     By SSN= By.xpath("//span/input[@name='socialSecurityNumber']");
-    By PrimaryPhoneDropdown= By.xpath("//div[text()='Primary Phone']");
-    By Phone= By.xpath("//span/input[@name='phone']");
+     By PhoneNumberTextField= By.xpath("//span/input[@name='phone']");
+    
+    By PrimaryPhoneDropdownArrow= By.xpath("//div[5]/div[1]/div/div/div[1]");
+    By PhonenumberOption= By.xpath("//ul/li[text()='Phone']");
+    By Savebutton= By.xpath("//button/span[contains(text(),'Save')]");
+    
+    
+    
     
     By DateofBirth = By.xpath("//div[1]/div/div/div[1]/div[1]/div/input");
     
@@ -280,18 +286,27 @@ public void enterSsn(String ssn) throws InterruptedException {
 	commonUtilities.waitfortheElement(driver,SSN);
 	commonUtilities.enterTextboxinputdata(driver, SSN,ssn);	
 }
+public void selectPrimaryPhoneDropdown() throws InterruptedException {
+    
+	commonUtilities.javaScriptclickonRadiobutton(driver, PrimaryPhoneDropdownArrow);
+	
+	commonUtilities.selectDropdownValue(driver, PhonenumberOption);		
+}
 public void enterPhone(String phone) throws InterruptedException {
-	commonUtilities.waitfortheElement(driver,Phone);
-	commonUtilities.enterTextboxinputdata(driver, Phone,phone);		
+	commonUtilities.waitfortheElement(driver,PhoneNumberTextField);
+	commonUtilities.enterTextboxinputdata(driver, PhoneNumberTextField,phone);		
 }
 public void enterDateofBirth(String dateofbirth) throws InterruptedException {
 	commonUtilities.waitfortheElement(driver,DateofBirth);
 	commonUtilities.enterTextboxinputdata(driver, DateofBirth,dateofbirth);		
 }
 public void selecteStateDropdown(String dropdownValue) throws InterruptedException {
-	commonUtilities.waitfortheElement(driver,stateDropdown);
+    By stateDropdown= By.xpath("//div/ul/li[contains(text(),'"+dropdownValue+"')]");
+
+	//commonUtilities.waitfortheElement(driver,stateDropdown);
 	commonUtilities.javaScriptclickonRadiobutton(driver, statedropDownArrow);
-	commonUtilities.selectDropdownValue(driver, statedropDownArrow,dropdownValue);		
+	
+	commonUtilities.selectDropdownValue(driver, stateDropdown);		
 }
 public void clickGenderRadioButton(String genderValue) throws InterruptedException {
 	By GenderRadiobutton= By.xpath("//span[text()='"+genderValue+"']");
@@ -305,5 +320,10 @@ public void selectClientName(String clientName) throws InterruptedException {
 
 	driver.findElement(ClientName).click();
 
+}
+public void clickonSaveButton() throws InterruptedException {
+	
+	commonUtilities.waitfortheElement(driver,Savebutton);
+	commonUtilities.javaScriptclickonRadiobutton(driver, Savebutton);		
 }
 }

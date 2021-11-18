@@ -32,7 +32,7 @@ public class IW extends DriverManager {
 		DataHook.setState(fakedata.address().state());
 		DataHook.setZipCode(fakedata.address().zipCode());
 		DataHook.setSSN(fakedata.idNumber().ssnValid());
-		DataHook.setPhone(fakedata.phoneNumber().subscriberNumber(2));
+		DataHook.setPhone(fakedata.phoneNumber().subscriberNumber(10));
 		DataHook.setDOB("01-17-1977");
 	}
 	@Then("Navigate to IW Screen and verified that IW Screen is displayed")
@@ -230,21 +230,23 @@ public class IW extends DriverManager {
 	public void createIWprofileDataEntry () throws InterruptedException {
 		try {
 			//Thread.sleep(30000);
+			System.out.println(DataHook.getPhone());
 
 			iwscreen.createIWprofileClick();
 			iwscreen.enterFirstName(DataHook.getFirstName());
 			iwscreen.enterLastName(DataHook.getLastName());
-			iwscreen.selectClientName("OneSource");
+			iwscreen.selectClientName("CCMSI");
 			iwscreen.enterAddress1(DataHook.getAddress1());
 			iwscreen.enterCity(DataHook.getCity());
-			System.out.println(DataHook.getState());
+			
 			iwscreen.selecteStateDropdown(DataHook.getState());
 			iwscreen.enterZipcode(DataHook.getZipCode());
 			iwscreen.enterSsn(DataHook.getSSN());
+			iwscreen.selectPrimaryPhoneDropdown();
 			iwscreen.enterPhone(DataHook.getPhone());
 			iwscreen.clickGenderRadioButton("M");
 			iwscreen.enterDateofBirth(DataHook.getDOB());
-			
+			iwscreen.clickonSaveButton();
 			
 			
 			

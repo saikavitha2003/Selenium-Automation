@@ -64,10 +64,12 @@ executor.executeScript("arguments[0].click();", element);
 		driver.findElement(locator).sendKeys(textdata);
 		driver.findElement(locator).sendKeys(Keys.ENTER);
 	}
-	public static void selectDropdownValue(WebDriver driver, By locator,String dropdownValue) {
-		//driver.findElement(locator).clear();
-		Select dropdownSelect = new Select(driver.findElement(locator));
-		dropdownSelect.selectByVisibleText(dropdownValue);
+	public static void selectDropdownValue(WebDriver driver, By locator) {
+		
+		driver.findElement(locator).click();
+		
+		//Select dropdownSelect = new Select(driver.findElement(locator));
+		//dropdownSelect.selectByVisibleText(dropdownValue);
 	}
 	
 }
